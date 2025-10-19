@@ -51,12 +51,14 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 font-bold text-2xl">
-            <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold">
-              S
-            </div>
-            <span className="text-gray-900 dark:text-white">SkillNest</span>
-          </Link>
+<Link href="/" className="flex items-center gap-3 font-bold text-2xl">
+  <img
+    src="skillnest logo.jpg" // Replace with the actual path to your JPG
+    alt="SkillNest Logo"
+    className="w-60 h-20 rounded-lg object-cover"
+  />
+</Link>
+
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-12">
