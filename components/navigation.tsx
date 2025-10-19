@@ -12,7 +12,7 @@ const courses = [
   { name: "Tuition (Class 4 to 10)", slug: "tuition" },
   { name: "SSC Coaching", slug: "ssc-coaching" },
   { name: "Introduction to AI", slug: "introduction-to-ai" },
-  { name: "Hostel & Transportation Facilities", slug: "hostel-facilities" },
+  { name: "Hostel & Transportation Facilities for School Students", slug: "hostel-facilities" },
 ]
 
 export default function Navigation() {

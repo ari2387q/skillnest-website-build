@@ -34,8 +34,9 @@ export default function Features() {
 
   return (
     <section className="py-48 bg-white dark:bg-slate-950 transition-colors">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="w-screen h-screen flex items-center justify-center px-4">
+     
+      <div className="max-w-7xl mx-auto px-9 sm:px-8 lg:px-12">
+        <div className="w-screen h-screen flex items-center justify-center px-2">
         <div className="text-center space-y-8 mb-32 max-w-3xl mx-auto">
           <h2 className="text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
             Why Choose SkillNest?
@@ -45,6 +46,7 @@ export default function Features() {
           </p>
         </div>
         </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
           {features.map((feature, i) => (
             <div key={i} className="space-y-8 group flex flex-col items-center">
@@ -62,9 +64,12 @@ export default function Features() {
                 </p>
               </div>
             </div>
+      
           ))}
         </div>
       </div>
+      </div>
+      
     </section>
   )
 }

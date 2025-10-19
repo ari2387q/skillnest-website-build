@@ -13,20 +13,13 @@ export default function Hero() {
                 Empower Your <span className="text-amber-500">Future</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl font-light">
-                Transform your life through world-class education, expert mentorship, and practical skill development.
+                Transform your life through world-class education, expert mentorship, and practical skill development.<br></br>
                 Achieve independence, success, and meaningful career growth at any age.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-8">
-              <button className="px-12 py-5 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition font-semibold text-lg shadow-lg hover:shadow-xl">
-                Explore Our Courses
-              </button>
-              <button className="px-12 py-5 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-full hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-400 transition font-semibold text-lg">
-                Get in Touch
-              </button>
-            </div>
+            
           </div>
 
           {/* Right Image - Centered */}

@@ -54,7 +54,7 @@ export default function Mission() {
           </div>
 
           {/* Key Values */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pt-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-25 pt-20">
             {[
               { title: "Expert Faculty", desc: "Highly qualified instructors with industry experience" },
               { title: "Modern Methods", desc: "Innovative teaching techniques and tools" },
@@ -63,9 +63,9 @@ export default function Mission() {
             ].map((value, i) => (
               <div
                 key={i}
-                className="space-y-6 p-12 bg-white dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 hover:shadow-xl transition"
+                className="space-y-9 p-12 bg-white dark:bg-slate-800 rounded-5xl border border-gray-200 dark:border-slate-700 hover:shadow-xl transition"
               >
-                <h4 className="font-bold text-gray-900 dark:text-white text-2xl">{value.title}</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white text-4xl">{value.title}</h4>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg font-light">{value.desc}</p>
               </div>
             ))}
