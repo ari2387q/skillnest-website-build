@@ -4,7 +4,8 @@ export default function Mission() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="space-y-32">
           {/* Header */}
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
+          <div className="w-screen h-screen flex items-center justify-center px-4">
+            <div className="text-center space-y-8 max-w-3xl mx-auto">
             <h2 className="text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
               Our Mission & Vision
             </h2>
@@ -12,8 +13,8 @@ export default function Mission() {
               We believe that quality education and skill development should be accessible to everyone, regardless of
               age or background.
             </p>
+            </div>
           </div>
-
           {/* Mission & Vision Cards with Images - Centered */}
           <div className="grid lg:grid-cols-2 gap-24">
             {/* Mission */}
