@@ -13,73 +13,90 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   return (
     <main>
       <Navigation />
-      <section className="py-16 bg-gradient-to-br from-amber-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <div className="text-5xl mb-4">{course.icon}</div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">{course.title}</h1>
-            <p className="text-xl text-gray-600">{course.subtitle}</p>
+      
+      {/* --- HEADER SECTION: Centered and Spacious --- */}
+      <section className="py-24 bg-gradient-to-br from-amber-50 to-white">
+        {/* Container is now max-w-5xl, centered, and text is centered */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> 
+          <div className="space-y-4">
+            <div className="text-6xl mb-4">{course.icon}</div>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+              {course.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600">{course.subtitle}</p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* --- CONTENT SECTION: Increased Spacing Between Sections --- */}
+      <section className="py-20 bg-white">
+        {/* Main Content Container */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           {/* Course Image */}
-          <div className="mb-12">
+          {/* Centered the image block and added large bottom margin (mb-24) */}
+          <div className="flex justify-center mb-24"> 
             <img
               src={course.image || "/placeholder.svg"}
               alt={course.title}
-              className="w-full h-96 object-cover rounded-2xl shadow-lg"
+              className="w-full h-auto max-h-[500px] object-cover rounded-3xl shadow-2xl" 
             />
           </div>
 
-          {/* Overview */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Course Overview</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">{course.overview}</p>
-          </div>
+          {/* Wrapper for all content sections, adding huge vertical space between them (space-y-24) */}
+          <div className="space-y-24"> 
 
-          {/* Key Benefits */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Benefits</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {course.benefits.map((benefit, i) => (
-                <div key={i} className="flex gap-3 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                  <span className="text-2xl">✓</span>
-                  <span className="text-gray-700">{benefit}</span>
-                </div>
-              ))}
+            {/* Overview */}
+            <div className="text-center"> 
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Course Overview</h2>
+              <p className="text-xl text-gray-700 leading-relaxed mx-auto max-w-4xl">{course.overview}</p>
             </div>
-          </div>
 
-          {/* Curriculum */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
-            <div className="space-y-3">
-              {course.curriculum.map((item, i) => (
-                <div key={i} className="flex gap-3 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                  <span className="text-amber-600 font-bold">{i + 1}.</span>
-                  <span className="text-gray-700">{item}</span>
-                </div>
-              ))}
+            {/* Key Benefits */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">What You Will Gain</h2>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {course.benefits.map((benefit, i) => (
+                  <div key={i} className="flex gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 shadow-sm">
+                    <span className="text-2xl text-amber-600">★</span>
+                    <span className="text-lg text-gray-800">{benefit}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Who Should Enroll */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Who Should Enroll?</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">{course.targetAudience}</p>
-          </div>
+            {/* Curriculum */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">Detailed Curriculum</h2>
+              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
+                {course.curriculum.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-2">
+                    <span className="text-xl text-amber-600 font-bold w-6 shrink-0">{i + 1}.</span> 
+                    <span className="text-lg text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          {/* CTA */}
-          <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-8 rounded-2xl text-center">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Future?</h3>
-            <p className="text-lg mb-6">Enroll now and start your journey to success</p>
-            <button className="px-8 py-3 bg-white text-amber-600 rounded-full hover:bg-gray-100 transition font-bold">
-              Enroll Now
-            </button>
-          </div>
+            {/* Who Should Enroll */}
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Who Should Enroll?</h2>
+              <p className="text-xl text-gray-700 leading-relaxed mx-auto max-w-4xl">{course.targetAudience}</p>
+            </div>
+
+            {/* CTA: Added large top margin (mt-32) for space before the footer */}
+            <div className="mt-32 pt-12">
+              <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-10 rounded-2xl text-center shadow-xl">
+                <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Future?</h3>
+                <p className="text-xl mb-8">Enroll now and start your journey to success with SkillNest!</p>
+                <button className="px-10 py-4 text-xl bg-white text-amber-700 rounded-full hover:bg-gray-100 transition font-extrabold shadow-lg hover:shadow-2xl">
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+          
+          </div> 
+          
         </div>
       </section>
 
