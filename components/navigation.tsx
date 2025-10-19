@@ -49,7 +49,7 @@ export default function Navigation() {
                 onMouseEnter={() => setIsCoursesOpen(true)}
                 onMouseLeave={() => setIsCoursesOpen(false)}
               >
-                Courses
+                Courses & Facilities
                 <ChevronDown size={18} className={`transition ${isCoursesOpen ? "rotate-180" : ""}`} />
               </button>
 

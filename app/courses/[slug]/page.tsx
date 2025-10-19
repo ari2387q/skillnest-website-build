@@ -84,16 +84,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
               <p className="text-xl text-gray-700 leading-relaxed mx-auto max-w-4xl">{course.targetAudience}</p>
             </div>
 
-            {/* CTA: Added large top margin (mt-32) for space before the footer */}
-            <div className="mt-32 pt-12">
-              <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-10 rounded-2xl text-center shadow-xl">
-                <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Future?</h3>
-                <p className="text-xl mb-8">Enroll now and start your journey to success with SkillNest!</p>
-                <button className="px-10 py-4 text-xl bg-white text-amber-700 rounded-full hover:bg-gray-100 transition font-extrabold shadow-lg hover:shadow-2xl">
-                  Enroll Now
-                </button>
-              </div>
-            </div>
+          
           
           </div> 
           
