@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ChevronDown, Moon, Sun } from "lucide-react"
+import { ChevronDown, Moon, Sun, Menu, X } from "lucide-react"
 
 const courses = [
   { name: "Spoken English Training", slug: "spoken-english" },
@@ -17,6 +17,8 @@ const courses = [
 
 export default function Navigation() {
   const [isCoursesOpen, setIsCoursesOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false)
   const [isDark, setIsDark] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -56,7 +58,7 @@ export default function Navigation() {
             <span className="text-gray-900 dark:text-white">SkillNest</span>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-12">
             <Link
               href="/"
@@ -111,7 +113,7 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Dark Mode Toggle & CTA */}
+          {/* Dark Mode Toggle & Mobile Menu Button */}
           <div className="flex items-center gap-4">
             <button
               onClick={toggleDarkMode}
@@ -120,6 +122,15 @@ export default function Navigation() {
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 transition"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
             <Link
               href="/contact"
               className="hidden md:inline-block px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition font-semibold text-base"
@@ -128,6 +139,74 @@ export default function Navigation() {
             </Link>
           </div>
         </div>
+
+        {isMobileMenuOpen && (
+          <div className="md:hidden pb-6 border-t border-gray-200 dark:border-slate-700">
+            <div className="flex flex-col gap-4 pt-6">
+              <Link
+                href="/"
+                className="px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg transition font-medium text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+
+              {/* Mobile Courses Dropdown */}
+              <div>
+                <button
+                  onClick={() => setIsMobileCoursesOpen(!isMobileCoursesOpen)}
+                  className="w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg transition font-medium text-base flex items-center justify-between"
+                >
+                  Courses
+                  <ChevronDown size={18} className={`transition ${isMobileCoursesOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {/* Mobile Courses List */}
+                {isMobileCoursesOpen && (
+                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l-2 border-amber-500 pl-4">
+                    {courses.map((course) => (
+                      <Link
+                        key={course.slug}
+                        href={`/courses/${course.slug}`}
+                        className="py-2 text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition text-sm"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false)
+                          setIsMobileCoursesOpen(false)
+                        }}
+                      >
+                        {course.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/contact"
+                className="px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg transition font-medium text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              <Link
+                href="/payment"
+                className="px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-gray-50 dark:hover:bg-slate-800 rounded-lg transition font-medium text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Payment
+              </Link>
+
+              <Link
+                href="/contact"
+                className="px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition font-semibold text-base text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   )
