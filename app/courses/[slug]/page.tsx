@@ -22,8 +22,8 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <div className="text-6xl mb-4">{course.icon}</div>
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
               {course.title}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600">{course.subtitle}</p>
+            </h1><br></br>
+            <p className="text-xl md:text-2xl text-gray-600">{course.subtitle}</p><br></br>
           </div>
         </div>
       </section>
@@ -41,20 +41,20 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
               alt={course.title}
               className="w-full h-auto max-h-[500px] object-cover rounded-3xl shadow-2xl" 
             />
-          </div>
+          </div><br></br>
 
           {/* Wrapper for all content sections, adding huge vertical space between them (space-y-24) */}
           <div className="space-y-24"> 
 
             {/* Overview */}
             <div className="text-center"> 
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Course Overview</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Course Overview</h2><br></br>
               <p className="text-xl text-gray-700 leading-relaxed mx-auto max-w-4xl">{course.overview}</p>
-            </div>
+            </div><br />
 
             {/* Key Benefits */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">What You Will Gain</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">What You Will Gain</h2><br></br>
               <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {course.benefits.map((benefit, i) => (
                   <div key={i} className="flex gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 shadow-sm">
@@ -63,11 +63,11 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                   </div>
                 ))}
               </div>
-            </div>
+            </div><br />
 
             {/* Curriculum */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">Detailed Curriculum</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">Detailed Curriculum</h2><br></br>
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
                 {course.curriculum.map((item, i) => (
                   <div key={i} className="flex items-start gap-4 p-2">
@@ -76,17 +76,17 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                   </div>
                 ))}
               </div>
-            </div>
+            </div><br></br>
 
             {/* Who Should Enroll */}
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Who Should Enroll?</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">Who Should Enroll?</h2><br></br>
               <p className="text-xl text-gray-700 leading-relaxed mx-auto max-w-4xl">{course.targetAudience}</p>
             </div>
 
           
           
-          </div> 
+          </div> <br></br>
           
         </div>
       </section>
