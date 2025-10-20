@@ -70,10 +70,9 @@ export default function ContactPage() {
           <br></br>
           {/* Business Hours */}
           <div className="mt-16 p-8 bg-amber-50 dark:bg-slate-800 rounded-xl border border-amber-200 dark:border-slate-700 transition-colors text-center max-w-3xl">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-6 text-lg">Business Hours</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 text-base">Saturday: 10:00 AM - 4:00 PM</p>
-            <p className="text-gray-600 dark:text-gray-400 text-base">Sunday: Closed</p>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-6 text-lg">Standard Time</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 text-base">Monday - Sunday: 8:00 AM - 8:00 PM</p>
+            <p className="text-gray-600 dark:text-gray-400 text-base">Timing will change as per requirement</p>
           </div>
         </div>
       </section>

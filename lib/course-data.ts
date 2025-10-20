@@ -154,6 +154,32 @@ export const courseContent = {
     targetAudience:
       "This program is designed for students in Classes 4 to 10 who want to improve their academic performance, clarify difficult concepts, or prepare for board exams. It's suitable for students of all academic levels.",
   },
+  "playschool": {
+    title: "Playchool & Nursery",
+    subtitle: "Nurturing early childhood development in a fun learning environment",
+    icon: "🎈",
+    image: "/children-playing-in-classroom.jpg",
+    overview:
+      "Our Playchool & Nursery program is designed to provide a safe, nurturing, and stimulating environment for young children. We focus on holistic development through play-based learning, fostering creativity, social skills, and foundational knowledge. Our experienced educators create engaging activities that promote cognitive, emotional, and physical growth in a fun and supportive setting.",
+    benefits: [
+      "Safe and nurturing environment",
+      "Play-based learning approach",
+      "Focus on holistic development",
+      "Experienced and caring educators",
+      "Engaging activities for all areas of growth",
+      "Preparation for formal schooling",
+    ],
+    curriculum: [
+      "Play-based learning activities",
+      "Creative arts and crafts",
+      "Storytelling and language development",
+      "Basic math and science concepts",
+      "Social skills and emotional intelligence",
+      "Physical activities and motor skills development",
+    ],
+    targetAudience:
+      "This program is ideal for children aged 2 to 5 years old who are beginning their educational journey. It's designed for parents seeking a quality early childhood education that emphasizes fun, creativity, and foundational learning.",
+  },
   "ssc-coaching": {
     title: "SSC Coaching",
     subtitle: "Expert preparation for SSC examinations with proven strategies",

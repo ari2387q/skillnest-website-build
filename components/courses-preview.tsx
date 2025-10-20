@@ -33,6 +33,12 @@ export default function CoursesPreview() {
       description: "Comprehensive academic support for school students.",
     },
     {
+      slug: "playschool",
+      name: "Playchool & Nursery",
+      icon: "",
+      description: "Nurturing early childhood development in a fun learning environment.",
+    },
+    {
       slug: "ssc-coaching",
       name: "SSC Coaching",
       icon: "🚀",

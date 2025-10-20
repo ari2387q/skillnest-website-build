@@ -10,6 +10,7 @@ const courses = [
   { name: "Soft Skills & Motivation Training", slug: "soft-skills" },
   { name: "IQ Development", slug: "iq-development" },
   { name: "Tuition (Class 4 to 10)", slug: "tuition" },
+  { name: "Playchool & Nursery", slug: "playschool" },
   { name: "SSC Coaching", slug: "ssc-coaching" },
   { name: "Introduction to AI", slug: "introduction-to-ai" },
   { name: "Hostel & Transportation Facilities for School Students", slug: "hostel-facilities" },
