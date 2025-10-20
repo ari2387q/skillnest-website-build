@@ -155,7 +155,7 @@ export const courseContent = {
       "This program is designed for students in Classes 4 to 10 who want to improve their academic performance, clarify difficult concepts, or prepare for board exams. It's suitable for students of all academic levels.",
   },
   "playschool": {
-    title: "Playchool & Nursery",
+    title: "Playschool & Nursery",
     subtitle: "Nurturing early childhood development in a fun learning environment",
     icon: "🎈",
     image: "/playschool.png",

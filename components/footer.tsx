@@ -22,7 +22,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/courses/spoken-english" className="hover:text-amber-400 transition text-base">
-                  Courses
+                  Courses & Facilities
                 </a>
               </li>
               <li>
