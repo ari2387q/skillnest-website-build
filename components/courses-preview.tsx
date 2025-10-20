@@ -35,7 +35,7 @@ export default function CoursesPreview() {
     {
       slug: "playschool",
       name: "Playchool & Nursery",
-      icon: "",
+      icon: "🎈",
       description: "Nurturing early childhood development in a fun learning environment.",
     },
     {
