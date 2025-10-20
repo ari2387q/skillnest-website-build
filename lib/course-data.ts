@@ -158,7 +158,7 @@ export const courseContent = {
     title: "Playchool & Nursery",
     subtitle: "Nurturing early childhood development in a fun learning environment",
     icon: "🎈",
-    image: "/children-playing-in-classroom.jpg",
+    image: "/playschool.png",
     overview:
       "Our Playchool & Nursery program is designed to provide a safe, nurturing, and stimulating environment for young children. We focus on holistic development through play-based learning, fostering creativity, social skills, and foundational knowledge. Our experienced educators create engaging activities that promote cognitive, emotional, and physical growth in a fun and supportive setting.",
     benefits: [
