@@ -38,8 +38,8 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-8 text-lg">Contact Us</h4>
             <ul className="space-y-2 text-gray-400 text-base">
-              <li>Phone: 8891571233</li>
-              <li>Phone: 9706108462</li>
+              <li>Phone: +91 8891571233</li>
+              <li>Phone: +91 9706108462</li>
               <li>Email: info@skillnest.org.in</li>
               <li>Website: skillnest.org.in</li>
             </ul>

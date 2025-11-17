@@ -28,8 +28,8 @@ export default function ContactPage() {
                 </div>
                 <h3 className="font-bold text-gray-900 dark:text-white text-lg">Phone</h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-base">8891571233</p>
-              <p className="text-gray-600 dark:text-gray-400 text-base">9706108462</p>
+              <p className="text-gray-600 dark:text-gray-400 text-base">+91 8891571233</p>
+              <p className="text-gray-600 dark:text-gray-400 text-base">+91 9706108462</p>
             </div>
 
             {/* Website */}
