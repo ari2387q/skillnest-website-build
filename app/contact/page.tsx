@@ -62,7 +62,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="font-bold text-gray-900 dark:text-white text-lg">Address</h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-base">SkillNest,Barpeta Road,Assam</p>
+              <p className="text-gray-600 dark:text-gray-400 text-base">Dabaliapara,Barpeta PIN-781316 Assam</p>
               
             </div>
           </div>
