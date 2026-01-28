@@ -73,7 +73,7 @@ export default function CoursesPreview() {
             <Link
               key={course.slug}
               href={`/courses/${course.slug}`}
-              className="group bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:border-amber-500 hover:shadow-lg transition cursor-pointer"
+              className="group bg-linear-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200 hover:border-amber-500 hover:shadow-lg transition cursor-pointer"
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition">{course.icon}</div>
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition">

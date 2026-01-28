@@ -24,7 +24,7 @@ export default function RootLayout({
             {/* Import and use your Navigation component here */}
           </header>
 
-          <main className="max-w-screen-xl mx-auto px-4">
+          <main className="max-w-7xl mx-auto px-4">
             {children}
           </main>
 

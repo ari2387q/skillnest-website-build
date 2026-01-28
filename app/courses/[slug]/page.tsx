@@ -15,7 +15,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
       <Navigation />
       
       {/* --- HEADER SECTION: Centered and Spacious --- */}
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-white">
+      <section className="py-24 bg-linear-to-br from-amber-50 to-white">
         {/* Container is now max-w-5xl, centered, and text is centered */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"> 
           <div className="space-y-4">
@@ -39,7 +39,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <img
               src={course.image || "/placeholder.svg"}
               alt={course.title}
-              className="w-full h-auto max-h-[500px] object-cover rounded-3xl shadow-2xl" 
+              className="w-full h-auto max-h-125 object-cover rounded-3xl shadow-2xl" 
             />
           </div><br></br>
 
