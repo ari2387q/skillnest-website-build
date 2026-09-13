@@ -1,77 +1,113 @@
-﻿# SkillNest - Educational Platform Website
+﻿# SkillNest
 
 A modern, professional educational platform website built with Next.js, TypeScript, and Tailwind CSS.
 
-> **Note**: This startup has concluded. The website deployment remains active on Vercel for demonstration purposes.
+**Status**: This startup has concluded. The website remains deployed on Vercel for demonstration purposes.
 
-## 🎯 Features
+## Overview
 
-- 🎨 **Modern Responsive Design** - Mobile-first approach, optimized for all devices
-- ⚡ **High Performance** - Next.js 14+ with optimized images and lazy loading
-- 🌓 **Dark Mode Support** - Seamless light/dark theme switching
-- 📱 **Fully Responsive** - Mobile, tablet, and desktop optimization
-- ♿ **Accessible** - WCAG compliant with semantic HTML
-- 🎬 **Smooth Animations** - Scroll reveal effects and smooth transitions
-- 📊 **Dynamic Courses** - Individual course pages with detailed curriculum
-- 🔒 **Type-Safe** - Full TypeScript implementation
+SkillNest is a comprehensive educational platform offering skill development courses ranging from spoken English training to AI introduction. The application features responsive design, dynamic course management, and seamless user experience.
 
-## 🛠️ Tech Stack
+## Technology Stack
 
-- **Framework**: Next.js 14+ (React)
+- **Framework**: Next.js 14+ with React
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS + PostCSS
-- **UI Library**: Radix UI
+- **Styling**: Tailwind CSS, PostCSS
+- **Components**: Radix UI
 - **Icons**: Lucide React
-- **Backend**: Firebase Admin SDK (configured)
+- **Backend Integration**: Firebase Admin SDK
 - **Deployment**: Vercel
 
-## 📦 Installation
+## Project Architecture
+
+\\\mermaid
+graph TB
+    subgraph App["App Directory"]
+        Layout["layout.tsx"]
+        Page["page.tsx"]
+        Globals["globals.css"]
+        API["api/"]
+        Courses["courses/[slug]/"]
+        Contact["contact/"]
+        Payment["payment/"]
+    end
+    
+    subgraph Components["Components"]
+        Nav["navigation.tsx"]
+        Hero["hero.tsx"]
+        Mission["mission.tsx"]
+        Features["features.tsx"]
+        Footer["footer.tsx"]
+        Button["button.tsx"]
+        ScrollReveal["scroll-reveal.tsx"]
+        Theme["theme-provider.tsx"]
+    end
+    
+    subgraph Library["Library"]
+        CourseData["course-data.ts"]
+        Firebase["firebaseAdmin.ts"]
+        Utils["utils.ts"]
+    end
+    
+    subgraph Assets["Public Assets"]
+        Images["*.jpg, *.png, *.svg"]
+    end
+    
+    App --> Components
+    App --> Library
+    App --> Assets
+    Components --> Library
+\\\
+
+## Installation
 
 \\\ash
-# Clone repository
-git clone <repo-url>
+git clone <repository-url>
 cd skillnest-website-build
 
-# Install dependencies
 npm install
 
-# Run development server
 npm run dev
-
-# Open http://localhost:3000
 \\\
 
-## 📂 Project Structure
+## Available Commands
 
-\\\
-├── app/                    # Next.js App Router
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── api/               # API endpoints
-│   ├── courses/[slug]/    # Dynamic course pages
-│   └── globals.css
-├── components/            # Reusable React components
-│   ├── navigation.tsx
-│   ├── hero.tsx
-│   ├── features.tsx
-│   ├── footer.tsx
-│   └── ...
-├── lib/
-│   ├── course-data.ts    # Course content
-│   └── utils.ts
-└── public/               # Static assets
-\\\
+| Command | Purpose |
+|---------|---------|
+| \
+pm run dev\ | Start development server on port 3000 |
+| \
+pm run build\ | Create optimized production build |
+| \
+pm start\ | Run production server |
+| \
+pm run lint\ | Execute ESLint checks |
 
-## 🚀 Available Scripts
+## Core Features
 
-\\\ash
-npm run dev      # Start development server
-npm run build    # Create production build
-npm start        # Start production server
-npm run lint     # Run ESLint
-\\\
+- Responsive design across all device sizes
+- Server-side rendering with Next.js App Router
+- Type-safe implementation with TypeScript
+- Dark mode support with theme switching
+- Smooth scroll animations and transitions
+- Dynamic course detail pages with curriculum
+- API endpoints for contact and enrollment
+- Optimized images and lazy loading
+- Accessible markup with semantic HTML
 
-## 🎓 Courses
+## Routes
+
+| Route | Purpose |
+|-------|---------|
+| \/\ | Home page |
+| \/courses/[slug]\ | Individual course page |
+| \/contact\ | Contact page |
+| \/payment\ | Payment page |
+| \/api/contact\ | Contact form endpoint |
+| \/api/enroll\ | Enrollment endpoint |
+| \/api/health\ | Health check endpoint |
+
+## Courses
 
 - Spoken English Training
 - Public Speaking & Personality Development
@@ -83,32 +119,21 @@ npm run lint     # Run ESLint
 - Introduction to AI
 - Hostel & Transportation Facilities
 
-## 🌐 Pages
+## Performance
 
-- \/\ - Home with hero, features, and mission
-- \/courses/[slug]\ - Individual course details
-- \/contact\ - Contact form
-- \/payment\ - Payment integration
-- \/api/contact\ - Contact endpoint
-- \/api/enroll\ - Enrollment endpoint
+- Next.js optimized image handling
+- Automatic code splitting by route
+- CSS tree-shaking via Tailwind
+- Server-side rendering where applicable
+- Minimal JavaScript bundle
 
-## 🎨 Design Highlights
+## Browser Support
 
-- **Color Scheme**: Amber primary with slate dark mode
-- **Typography**: Inter font with optimized hierarchy
-- **Spacing**: Consistent 24-40px vertical rhythm
-- **Layout**: Max-width 7xl container for readability
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## 📞 Contact Information
-
-- **Email**: info@skillnest.org.in
-- **Phone**: +91 8891571233, +91 9706108462
-- **Website**: skillnest.org.in
-
-## 📝 License
+## License
 
 All rights reserved.
-
----
-
-For detailed technical documentation, see [README_PORTFOLIO.md](./README_PORTFOLIO.md)
