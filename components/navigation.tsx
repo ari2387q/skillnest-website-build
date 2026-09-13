@@ -38,11 +38,11 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 font-bold text-2xl">
+          <Link href="/" className="flex items-center gap-3 font-bold text-2xl flex-shrink-0">
             <img
               src="/skillnest logo.jpg"
               alt="SkillNest Logo"
-              className="w-60 h-20 rounded-lg object-cover"
+              className="h-16 w-auto rounded-lg object-cover"
             />
           </Link>
 

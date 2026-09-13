@@ -4,13 +4,13 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white w-full">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-12 flex flex-col items-center">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-12">
         
         <ScrollReveal delay={0} direction="up" className="w-full">
-          <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-20">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
 
             {/* Brand */}
-            <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+            <div className="flex flex-col items-start text-left space-y-6">
               <Link href="/" className="inline-block transition-transform hover:scale-105 active:scale-95">
                 <img
                   src="/skillnest logo.jpg"
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-start text-left">
               <h4 className="font-bold mb-6 text-sm tracking-widest uppercase text-slate-50">Quick Links</h4>
               <ul className="space-y-4 text-slate-300">
                 <li>
@@ -42,22 +42,22 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex flex-col items-start text-left">
               <h4 className="font-bold mb-6 text-sm tracking-widest uppercase text-slate-50">Contact Us</h4>
               <ul className="space-y-4 text-slate-300 text-base">
-                <li className="flex items-center gap-4 justify-center md:justify-start">
+                <li className="flex items-center gap-4">
                   <span className="w-10 h-10 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center text-sm font-bold shadow-inner">P</span>
                   <span>+91 8891571233</span>
                 </li>
-                <li className="flex items-center gap-4 justify-center md:justify-start">
+                <li className="flex items-center gap-4">
                   <span className="w-10 h-10 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center text-sm font-bold shadow-inner">P</span>
                   <span>+91 9706108462</span>
                 </li>
-                <li className="flex items-center gap-4 justify-center md:justify-start">
+                <li className="flex items-center gap-4">
                   <span className="w-10 h-10 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center text-sm font-bold shadow-inner">E</span>
                   <span>info@skillnest.org.in</span>
                 </li>
-                <li className="flex items-center gap-4 justify-center md:justify-start">
+                <li className="flex items-center gap-4">
                   <span className="w-10 h-10 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center text-sm font-bold shadow-inner">W</span>
                   <span>skillnest.org.in</span>
                 </li>

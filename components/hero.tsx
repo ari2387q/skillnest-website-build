@@ -19,7 +19,7 @@ export default function Hero() {
               Transform your life through world-class education, expert mentorship, and practical skill development.
               Achieve independence, success, and meaningful career growth at any age.
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-4 pt-4">
               <Button href="/contact" size="lg">Get Started Today</Button>
               <Button href="/courses/spoken-english" variant="outline" size="lg">Explore Courses</Button>
             </div>
