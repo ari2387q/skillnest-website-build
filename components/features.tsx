@@ -29,24 +29,25 @@ export default function Features() {
     },
     {
       title: "Proven Results",
-      description: "Join thousands of successful graduates who've achieved their career goals with SkillNest.",
+      description: "Join thousands of successful graduates who have achieved their career goals with SkillNest.",
       image: "/success-achievement-results-graduates.jpg",
     },
   ]
 
   return (
-    <section className="py-48 bg-white dark:bg-slate-950 transition-colors">
-      <div className="w-full px-8 lg:px-20 xl:px-32 2xl:px-48">
+    <section className="py-32 bg-white dark:bg-slate-950 transition-colors">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+
         {/* Section Header */}
-        <div className="w-full min-h-screen flex items-center justify-center px-2">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
+        <div className="flex items-center justify-center min-h-[70vh] py-12">
+          <div className="text-center space-y-6 max-w-3xl mx-auto">
             <ScrollReveal delay={0} direction="up">
-              <h2 className="text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
                 Why Choose SkillNest?
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={150} direction="up">
-              <p className="text-2xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
                 We combine quality education with practical implementation to ensure your success
               </p>
             </ScrollReveal>
@@ -54,20 +55,20 @@ export default function Features() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, i) => (
             <ScrollReveal key={i} delay={(i % 3) * 100} direction="up">
-              <div className="space-y-8 group flex flex-col items-center h-full">
-                <div className="overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition w-full">
+              <div className="group flex flex-col items-center text-center space-y-5 h-full">
+                <div className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition w-full">
                   <img
                     src={feature.image || "/placeholder.svg"}
                     alt={feature.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-52 object-cover group-hover:scale-105 transition duration-500"
                   />
                 </div>
-                <div className="space-y-4 px-2 text-center">
-                  <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light text-lg">
+                <div className="space-y-2 px-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm font-light">
                     {feature.description}
                   </p>
                 </div>
@@ -75,6 +76,7 @@ export default function Features() {
             </ScrollReveal>
           ))}
         </div>
+
       </div>
     </section>
   )

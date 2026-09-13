@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ChevronDown, Menu, X } from "lucide-react"
+import Button from "@/components/button"
 
 const courses = [
   { name: "Spoken English Training", slug: "spoken-english" },
@@ -34,7 +35,7 @@ export default function Navigation() {
         ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-200/60 shadow-lg"
         : "bg-white dark:bg-slate-950 border-b border-gray-200 shadow-sm"
     }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 font-bold text-2xl">
@@ -104,12 +105,9 @@ export default function Navigation() {
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            <Link
-              href="/contact"
-              className="hidden md:inline-block px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition font-semibold text-base"
-            >
-              Get Started
-            </Link>
+            <div className="hidden md:block">
+              <Button href="/contact" size="md">Get Started</Button>
+            </div>
           </div>
         </div>
 
@@ -162,15 +160,14 @@ export default function Navigation() {
                 Contact
               </Link>
 
-              
-
-              <Link
+              <Button
                 href="/contact"
-                className="px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition font-semibold text-base text-center"
+                size="md"
+                className="w-full justify-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get Started
-              </Link>
+              </Button>
             </div>
           </div>
         )}

@@ -1,6 +1,7 @@
 ﻿import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import ScrollReveal from "@/components/scroll-reveal"
+import Button from "@/components/button"
 import { courseContent } from "@/lib/course-data"
 import { notFound } from "next/navigation"
 
@@ -16,64 +17,106 @@ export default async function CoursePage({
   return (
     <main>
       <Navigation />
-      <section className="py-28 bg-linear-to-br from-amber-50 to-white w-full">
-        <div className="w-full px-8 lg:px-20 xl:px-32 2xl:px-48 text-center">
+
+      {/* ── Hero Header ───────────────────────────────────────────── */}
+      <section className="py-20 bg-gradient-to-br from-amber-50 via-white to-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <ScrollReveal delay={0} direction="up">
-            <div className="text-6xl mb-6">{course.icon}</div>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">{course.title}</h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">{course.subtitle}</p>
+            <div className="text-6xl mb-5 leading-none">{course.icon}</div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+              {course.title}
+            </h1>
+            <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed mb-8">
+              {course.subtitle}
+            </p>
+            <Button href="/contact" size="lg">Enroll Now</Button>
           </ScrollReveal>
         </div>
       </section>
-      <section className="py-20 bg-white">
-        <div className="w-full px-8 lg:px-20 xl:px-32 2xl:px-48">
+
+      {/* ── Main Content ──────────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+
+          {/* Course Image */}
           <ScrollReveal delay={0} direction="up">
-            <div className="flex justify-center mb-24">
-              <img src={course.image || "/placeholder.svg"} alt={course.title} className="w-full h-auto max-h-[500px] object-cover rounded-3xl shadow-2xl" />
+            <img
+              src={course.image || "/placeholder.svg"}
+              alt={course.title}
+              className="w-full h-60 md:h-72 object-cover rounded-2xl shadow-lg mb-16"
+            />
+          </ScrollReveal>
+
+          {/* Content sections with dividers */}
+          <div className="divide-y divide-gray-100">
+
+            {/* Overview */}
+            <ScrollReveal delay={0} direction="up">
+              <div className="py-12 text-center">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">About This Course</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Course Overview</h2>
+                <p className="text-base text-gray-600 leading-loose max-w-2xl mx-auto">{course.overview}</p>
+              </div>
+            </ScrollReveal>
+
+            {/* Benefits */}
+            <ScrollReveal delay={0} direction="up">
+              <div className="py-12">
+                <div className="text-center mb-8">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">What You Get</p>
+                  <h2 className="text-2xl font-bold text-gray-900">What You Will Gain</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {course.benefits.map((benefit: string, i: number) => (
+                    <div key={i} className="flex items-start gap-3 p-4 bg-amber-50 rounded-xl border border-amber-100 hover:border-amber-300 hover:shadow-sm transition">
+                      <span className="text-amber-500 font-bold mt-0.5 shrink-0">★</span>
+                      <span className="text-sm text-gray-700 leading-relaxed">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Curriculum */}
+            <ScrollReveal delay={0} direction="up">
+              <div className="py-12">
+                <div className="text-center mb-8">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">Topics Covered</p>
+                  <h2 className="text-2xl font-bold text-gray-900">Detailed Curriculum</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-x-12 gap-y-3">
+                  {course.curriculum.map((item: string, i: number) => (
+                    <div key={i} className="flex items-start gap-3 py-2 border-b border-gray-50">
+                      <span className="text-amber-500 font-bold shrink-0 w-6 text-sm">{i + 1}.</span>
+                      <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Who Should Enroll */}
+            <ScrollReveal delay={0} direction="up">
+              <div className="py-12 text-center">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">Is This For You?</p>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Who Should Enroll?</h2>
+                <p className="text-base text-gray-600 leading-loose max-w-2xl mx-auto">{course.targetAudience}</p>
+              </div>
+            </ScrollReveal>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <ScrollReveal delay={0} direction="up">
+            <div className="mt-8 pt-12 border-t border-gray-100 flex flex-col sm:flex-row gap-4 items-center justify-center text-center">
+              <p className="text-gray-600 text-base">Ready to transform your future?</p>
+              <Button href="/contact" size="lg">Get In Touch</Button>
             </div>
           </ScrollReveal>
-          <div className="space-y-24 max-w-5xl mx-auto">
-            <ScrollReveal delay={0} direction="up">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Course Overview</h2>
-                <p className="text-xl text-gray-700 leading-relaxed">{course.overview}</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0} direction="up">
-              <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">What You Will Gain</h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {course.benefits.map((benefit: string, i: number) => (
-                    <div key={i} className="flex gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 shadow-sm">
-                      <span className="text-2xl text-amber-600">★</span>
-                      <span className="text-lg text-gray-800">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0} direction="up">
-              <div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">Detailed Curriculum</h2>
-                <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-                  {course.curriculum.map((item: string, i: number) => (
-                    <div key={i} className="flex items-start gap-4 p-2">
-                      <span className="text-xl text-amber-600 font-bold w-6 shrink-0">{i + 1}.</span>
-                      <span className="text-lg text-gray-700">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0} direction="up">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Who Should Enroll?</h2>
-                <p className="text-xl text-gray-700 leading-relaxed">{course.targetAudience}</p>
-              </div>
-            </ScrollReveal>
-          </div>
+
         </div>
       </section>
+
       <Footer />
     </main>
   )
