@@ -22,11 +22,13 @@ export default async function CoursePage({
       <section className="pt-36 pb-24 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 flex-none w-full">
         <div className="w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <ScrollReveal delay={0} direction="up" className="flex flex-col items-center w-full">
-            <div className="text-7xl mb-8 drop-shadow-sm">{course.icon}</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-8 text-center">
+            <span className="inline-block text-amber-600 dark:text-amber-400 font-bold text-xs sm:text-sm tracking-widest uppercase bg-amber-100/60 dark:bg-amber-900/30 px-5 py-2 rounded-full mb-6">
+              SkillNest Program
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6 text-center">
               {course.title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl text-center mb-10 leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl text-center mb-10 leading-relaxed font-light">
               {course.subtitle}
             </p>
             <Button href="/contact" size="lg">Enroll Now</Button>

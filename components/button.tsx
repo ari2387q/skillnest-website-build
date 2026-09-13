@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import Link from "next/link"
 import { ReactNode } from "react"
@@ -22,11 +22,11 @@ export default function Button({
   className = "",
   type = "button",
 }: ButtonProps) {
-  const base = "inline-flex items-center justify-center gap-2 font-bold rounded-full select-none cursor-pointer border-0 outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg active:scale-95 active:translate-y-0"
+  const base = "inline-flex items-center justify-center gap-2 font-semibold rounded-full select-none cursor-pointer border-0 outline-none transition-all duration-300 ease-out hover:-translate-y-0.5 active:scale-95 active:translate-y-0"
 
   const variants = {
-    primary: "bg-amber-500 text-white shadow-[0_4px_14px_0_rgba(245,158,11,0.39)] hover:bg-amber-400 hover:shadow-[0_6px_20px_rgba(245,158,11,0.23)]",
-    outline: "bg-white text-amber-600 border-2 border-amber-400 shadow-sm hover:bg-amber-50",
+    primary: "bg-amber-500 !text-white shadow-[0_4px_16px_rgba(245,158,11,0.35)] hover:bg-amber-400 hover:shadow-[0_8px_24px_rgba(245,158,11,0.45)]",
+    outline: "bg-white !text-amber-600 border-2 border-amber-400 shadow-sm hover:bg-amber-50 hover:border-amber-500",
     ghost: "bg-transparent text-gray-700 hover:bg-gray-100 shadow-none",
   }
 

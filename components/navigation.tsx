@@ -56,38 +56,62 @@ export default function Navigation() {
             </Link>
 
             {/* Courses Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsCoursesOpen(true)}
+              onMouseLeave={() => setIsCoursesOpen(false)}
+            >
               <button
-                className="flex items-center gap-2 text-gray-700 hover:text-amber-600 transition font-medium text-lg"
-                onMouseEnter={() => setIsCoursesOpen(true)}
-                onMouseLeave={() => setIsCoursesOpen(false)}
+                className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-amber-500 dark:hover:text-amber-400 transition font-medium text-lg py-2"
+                aria-expanded={isCoursesOpen}
               >
-                Courses & Facilities
-                <ChevronDown size={18} className={`transition ${isCoursesOpen ? "rotate-180" : ""}`} />
+                Courses &amp; Facilities
+                <ChevronDown size={18} className={`transition-transform duration-300 ${isCoursesOpen ? "rotate-180 text-amber-500" : ""}`} />
               </button>
 
               {isCoursesOpen && (
                 <div
-                  className="absolute left-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 py-4 transition-colors"
-                  onMouseEnter={() => setIsCoursesOpen(true)}
-                  onMouseLeave={() => setIsCoursesOpen(false)}
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[640px] z-50 animate-in fade-in slide-in-from-top-2 duration-200"
                 >
-                  {courses.map((course) => (
-                    <Link
-                      key={course.slug}
-                      href={`/courses/${course.slug}`}
-                      className="block px-6 py-4 hover:bg-amber-50 text-gray-700 hover:text-amber-600 transition text-base"
-                    >
-                      {course.name}
-                    </Link>
-                  ))}
+                  <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-slate-800 p-6">
+                    <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-100 dark:border-slate-800">
+                      <span className="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+                        Our Learning Programs
+                      </span>
+                      <Link 
+                        href="/contact" 
+                        className="text-xs font-semibold text-gray-500 hover:text-amber-500 transition"
+                        onClick={() => setIsCoursesOpen(false)}
+                      >
+                        Need guidance? Contact us &rarr;
+                      </Link>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      {courses.map((course) => (
+                        <Link
+                          key={course.slug}
+                          href={`/courses/${course.slug}`}
+                          className="group flex items-center justify-between p-3.5 rounded-2xl hover:bg-amber-50/70 dark:hover:bg-slate-800/80 border border-transparent hover:border-amber-200/60 dark:hover:border-slate-700 transition-all duration-200"
+                          onClick={() => setIsCoursesOpen(false)}
+                        >
+                          <span className="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">
+                            {course.name}
+                          </span>
+                          <span className="text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold pl-2">
+                            &rarr;
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
 
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-amber-600 transition font-medium text-lg"
+              className="text-gray-700 dark:text-gray-200 hover:text-amber-500 dark:hover:text-amber-400 transition font-medium text-lg"
             >
               Contact
             </Link>
