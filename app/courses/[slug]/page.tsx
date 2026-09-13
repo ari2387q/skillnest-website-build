@@ -15,18 +15,18 @@ export default async function CoursePage({
   if (!course) notFound()
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-950 flex flex-col transition-colors">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 bg-white border-b border-gray-100 flex-none w-full">
-        <div className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+      {/* Hero Header */}
+      <section className="pt-36 pb-24 bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 flex-none w-full">
+        <div className="w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <ScrollReveal delay={0} direction="up" className="flex flex-col items-center w-full">
-            <div className="text-7xl mb-10 drop-shadow-sm">{course.icon}</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-10">
+            <div className="text-7xl mb-8 drop-shadow-sm">{course.icon}</div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight mb-8 text-center">
               {course.title}
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl text-center mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl text-center mb-10 leading-relaxed font-light">
               {course.subtitle}
             </p>
             <Button href="/contact" size="lg">Enroll Now</Button>
@@ -34,87 +34,109 @@ export default async function CoursePage({
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-28 bg-gray-50 flex-1 w-full">
-        <div className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
+      {/* Main Content Area */}
+      <section className="py-24 bg-gray-50 dark:bg-slate-950 flex-1 w-full">
+        <div className="w-full max-w-5xl mx-auto px-6 sm:px-8 flex flex-col items-center space-y-20">
           
-          <ScrollReveal delay={0} direction="up" className="w-full flex justify-center mb-28">
+          {/* Main Course Photo */}
+          <ScrollReveal delay={0} direction="up" className="w-full flex justify-center">
             <img
               src={course.image || "/placeholder.svg"}
               alt={course.title}
-              className="w-full max-w-3xl h-64 md:h-80 object-cover rounded-[2rem] shadow-xl"
+              className="w-full max-w-4xl h-72 md:h-96 object-cover rounded-3xl shadow-xl border border-gray-100 dark:border-slate-800"
             />
           </ScrollReveal>
 
-          <div className="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 md:p-16 w-full max-w-4xl space-y-32">
-            
-            {/* Overview */}
-            <ScrollReveal delay={0} direction="up" className="w-full flex flex-col items-center text-center">
-              <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
+          {/* Section 1: Overview Card */}
+          <ScrollReveal delay={0} direction="up" className="w-full">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-10 md:p-14 shadow-sm text-center flex flex-col items-center">
+              <span className="inline-block text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 bg-amber-50 dark:bg-amber-900/30 px-5 py-2 rounded-full">
                 About This Course
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Course Overview</h2>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Course Overview
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-loose max-w-3xl text-center">
                 {course.overview}
               </p>
-            </ScrollReveal>
+            </div>
+          </ScrollReveal>
 
-            {/* Benefits */}
-            <ScrollReveal delay={0} direction="up" className="w-full flex flex-col items-center">
-              <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
+          {/* Section 2: Benefits Card */}
+          <ScrollReveal delay={0} direction="up" className="w-full">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-10 md:p-14 shadow-sm flex flex-col items-center text-center">
+              <span className="inline-block text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 bg-amber-50 dark:bg-amber-900/30 px-5 py-2 rounded-full">
                 What You Get
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What You Will Gain</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                What You Will Gain
+              </h2>
               
-              <div className="grid md:grid-cols-2 gap-6 w-full max-w-3xl">
+              <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
                 {course.benefits.map((benefit: string, i: number) => (
-                  <div key={i} className="flex items-start gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-amber-200 transition-colors">
-                    <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-500 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="text-base font-bold">?</span>
+                  <div key={i} className="flex items-start gap-4 p-6 bg-gray-50 dark:bg-slate-800/50 rounded-2xl border border-gray-100 dark:border-slate-700 text-left">
+                    <div className="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-base font-bold">★</span>
                     </div>
-                    <span className="text-base text-gray-700 leading-relaxed font-medium">{benefit}</span>
+                    <span className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
+                      {benefit}
+                    </span>
                   </div>
                 ))}
               </div>
-            </ScrollReveal>
+            </div>
+          </ScrollReveal>
 
-            {/* Curriculum */}
-            <ScrollReveal delay={0} direction="up" className="w-full flex flex-col items-center">
-              <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
+          {/* Section 3: Curriculum Card */}
+          <ScrollReveal delay={0} direction="up" className="w-full">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-10 md:p-14 shadow-sm flex flex-col items-center text-center">
+              <span className="inline-block text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 bg-amber-50 dark:bg-amber-900/30 px-5 py-2 rounded-full">
                 Topics Covered
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Detailed Curriculum</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">
+                Detailed Curriculum
+              </h2>
               
-              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 w-full max-w-3xl">
+              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 w-full max-w-4xl">
                 {course.curriculum.map((item: string, i: number) => (
-                  <div key={i} className="flex items-center gap-5 p-4 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
+                  <div key={i} className="flex items-center gap-5 p-4 rounded-2xl bg-gray-50/60 dark:bg-slate-800/40 border border-gray-100/80 dark:border-slate-800 text-left">
                     <span className="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 text-white font-bold text-base shrink-0 shadow-md">
                       {i + 1}
                     </span>
-                    <span className="text-base text-gray-700 font-medium">{item}</span>
+                    <span className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
-            </ScrollReveal>
+            </div>
+          </ScrollReveal>
 
-            {/* Target Audience */}
-            <ScrollReveal delay={0} direction="up" className="w-full flex flex-col items-center text-center">
-              <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
+          {/* Section 4: Target Audience & Enrollment CTA */}
+          <ScrollReveal delay={0} direction="up" className="w-full">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 p-10 md:p-14 shadow-sm flex flex-col items-center text-center">
+              <span className="inline-block text-amber-600 dark:text-amber-400 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 bg-amber-50 dark:bg-amber-900/30 px-5 py-2 rounded-full">
                 Is This For You?
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Who Should Enroll?</h2>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Who Should Enroll?
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-loose max-w-3xl text-center mb-12">
                 {course.targetAudience}
               </p>
               
-              <div className="bg-amber-50 rounded-[2rem] p-8 md:p-12 w-full max-w-3xl flex flex-col items-center text-center border border-amber-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to transform your future?</h3>
-                <p className="text-gray-600 mb-8">Join thousands of students who have already started their journey.</p>
+              <div className="bg-amber-50 dark:bg-slate-800/60 rounded-3xl p-10 md:p-14 w-full max-w-3xl flex flex-col items-center text-center border border-amber-100 dark:border-slate-700 space-y-4">
+                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
+                  Ready to transform your future?
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg pb-4 max-w-md">
+                  Join thousands of ambitious learners who have accelerated their career with SkillNest.
+                </p>
                 <Button href="/contact" size="lg">Get In Touch</Button>
               </div>
-            </ScrollReveal>
+            </div>
+          </ScrollReveal>
 
-          </div>
         </div>
       </section>
 
