@@ -20,17 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-50 transition-colors`}>
         <ThemeProvider>
-          <header className="w-full">
-            {/* Import and use your Navigation component here */}
-          </header>
-
-          <main className="max-w-7xl mx-auto px-4">
-            {children}
-          </main>
-
-          <footer className="w-full">
-            {/* Import and use your Footer component here */}
-          </footer>
+          {children}
         </ThemeProvider>
       </body>
     </html>
