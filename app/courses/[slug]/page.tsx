@@ -19,11 +19,11 @@ export default async function CoursePage({
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-20 bg-white border-b border-gray-100 flex-none w-full">
+      <section className="pt-32 pb-24 bg-white border-b border-gray-100 flex-none w-full">
         <div className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center">
           <ScrollReveal delay={0} direction="up" className="flex flex-col items-center w-full">
-            <div className="text-7xl mb-8 drop-shadow-sm">{course.icon}</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-8">
+            <div className="text-7xl mb-10 drop-shadow-sm">{course.icon}</div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-10">
               {course.title}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl text-center mb-10 leading-relaxed">
@@ -35,10 +35,10 @@ export default async function CoursePage({
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-gray-50 flex-1 w-full">
+      <section className="py-28 bg-gray-50 flex-1 w-full">
         <div className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
           
-          <ScrollReveal delay={0} direction="up" className="w-full flex justify-center mb-24">
+          <ScrollReveal delay={0} direction="up" className="w-full flex justify-center mb-28">
             <img
               src={course.image || "/placeholder.svg"}
               alt={course.title}
@@ -46,7 +46,7 @@ export default async function CoursePage({
             />
           </ScrollReveal>
 
-          <div className="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 md:p-16 w-full max-w-4xl space-y-24">
+          <div className="bg-white rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 p-8 md:p-16 w-full max-w-4xl space-y-32">
             
             {/* Overview */}
             <ScrollReveal delay={0} direction="up" className="w-full flex flex-col items-center text-center">
@@ -64,7 +64,7 @@ export default async function CoursePage({
               <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
                 What You Get
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">What You Will Gain</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">What You Will Gain</h2>
               
               <div className="grid md:grid-cols-2 gap-6 w-full max-w-3xl">
                 {course.benefits.map((benefit: string, i: number) => (
@@ -83,7 +83,7 @@ export default async function CoursePage({
               <span className="inline-block text-amber-500 font-bold tracking-widest uppercase text-sm mb-4 bg-amber-50 px-4 py-1.5 rounded-full">
                 Topics Covered
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">Detailed Curriculum</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Detailed Curriculum</h2>
               
               <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 w-full max-w-3xl">
                 {course.curriculum.map((item: string, i: number) => (

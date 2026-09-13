@@ -35,11 +35,11 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-24 bg-white dark:bg-slate-950 transition-colors w-full">
+    <section className="py-32 bg-white dark:bg-slate-950 transition-colors w-full">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section Header */}
-        <div className="text-center space-y-6 max-w-3xl mx-auto mb-20">
+        <div className="text-center space-y-8 max-w-3xl mx-auto mb-24">
           <ScrollReveal delay={0} direction="up">
             <span className="inline-block text-amber-600 dark:text-amber-400 font-bold text-sm tracking-widest uppercase bg-amber-50 dark:bg-amber-900/30 px-4 py-1.5 rounded-full mb-4">
               Why Choose Us
@@ -56,7 +56,7 @@ export default function Features() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
           {features.map((feature, i) => (
             <ScrollReveal key={i} delay={(i % 3) * 100} direction="up">
               <div className="group flex flex-col p-6 rounded-[2rem] bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">

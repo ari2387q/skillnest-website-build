@@ -2,9 +2,9 @@
 
 export default function Mission() {
   return (
-    <section className="py-32 bg-gray-50 dark:bg-slate-900 transition-colors">
+    <section className="py-40 bg-gray-50 dark:bg-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="space-y-24">
+        <div className="space-y-32">
 
           {/* Header — full viewport height, centered */}
           <div className="flex items-center justify-center min-h-[80vh] py-12">

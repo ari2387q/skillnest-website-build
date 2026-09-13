@@ -3,9 +3,9 @@ import Button from "@/components/button"
 
 export default function Hero() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 pt-32 pb-28 transition-colors overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 pt-40 pb-32 transition-colors overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* Left Content */}
           <ScrollReveal className="space-y-8" delay={0} direction="up">
