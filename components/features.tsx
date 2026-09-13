@@ -1,4 +1,4 @@
-﻿import ScrollReveal from "@/components/scroll-reveal"
+import ScrollReveal from "@/components/scroll-reveal"
 
 export default function Features() {
   const features = [
@@ -35,40 +35,41 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 transition-colors">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <section className="py-24 bg-white dark:bg-slate-950 transition-colors w-full">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col items-center">
 
         {/* Section Header */}
-        <div className="flex items-center justify-center min-h-[70vh] py-12">
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <ScrollReveal delay={0} direction="up">
-              <h2 className="text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-                Why Choose SkillNest?
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal delay={150} direction="up">
-              <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-                We combine quality education with practical implementation to ensure your success
-              </p>
-            </ScrollReveal>
-          </div>
+        <div className="text-center space-y-6 max-w-3xl mx-auto mb-20">
+          <ScrollReveal delay={0} direction="up">
+            <span className="inline-block text-amber-600 dark:text-amber-400 font-bold text-sm tracking-widest uppercase bg-amber-50 dark:bg-amber-900/30 px-4 py-1.5 rounded-full mb-4">
+              Why Choose Us
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
+              Why Choose SkillNest?
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={150} direction="up">
+            <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
+              We combine quality education with practical implementation to ensure your success
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
           {features.map((feature, i) => (
-            <ScrollReveal key={i} delay={(i % 3) * 100} direction="up">
-              <div className="group flex flex-col items-center text-center space-y-5 h-full">
-                <div className="overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition w-full">
+            <ScrollReveal key={i} delay={(i % 3) * 100} direction="up" className="w-full">
+              <div className="group flex flex-col p-6 rounded-[2rem] bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full w-full">
+                <div className="overflow-hidden rounded-2xl mb-6 w-full shadow-sm">
                   <img
                     src={feature.image || "/placeholder.svg"}
                     alt={feature.title}
-                    className="w-full h-52 object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition duration-700"
                   />
                 </div>
-                <div className="space-y-2 px-2">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm font-light">
+                <div className="flex flex-col text-center px-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                     {feature.description}
                   </p>
                 </div>

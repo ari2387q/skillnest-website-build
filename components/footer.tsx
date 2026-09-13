@@ -1,4 +1,4 @@
-﻿import ScrollReveal from "@/components/scroll-reveal"
+import ScrollReveal from "@/components/scroll-reveal"
 import Link from "next/link"
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
                 <img
                   src="/skillnest logo.jpg"
                   alt="SkillNest Logo"
-                  className="h-16 w-auto rounded-xl object-cover shadow-sm bg-white p-2"
+                  className="h-24 w-auto rounded-xl object-contain"
                 />
               </Link>
               <p className="text-slate-300 text-base leading-relaxed max-w-sm">
